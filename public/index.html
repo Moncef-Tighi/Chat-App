@@ -2,8 +2,28 @@
     <head>
         <script src='/socket.io/socket.io.js' defer></script>
         <script src='javascript/chat.js' defer></script>
+        <link rel="stylesheet" href='css/style.css'>
     </head>
     <body>
-        <h1>test</h1>
+        <aside>
+            <ul>
+                <li>Moncef</li>
+                <li>Anaïs</li>
+            </ul>
+        </aside>
+        <section>
+            <div class="message">
+                <p>Hello. How are you today?</p>
+                <span class="time-left">11:00</span>
+              </div>
+
+        </section>
+
+
+          <form>
+              <label for="sender">Envoyer un message : </label>
+              <input type="text" id="sender">
+              <button type="submit">Envoyer</button>
+          </form>
     </body>
 </html>

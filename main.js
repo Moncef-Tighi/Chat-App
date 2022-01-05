@@ -14,7 +14,11 @@ const io = socketio(app);
 server.use(express.static("./public"));
 
 io.on("connection", (socket)=> {
-    console.log(socket);
+    socket.emit("welcome", "The websocket connexion have been established");
+
+    socket.on("sendMessage", (message)=> {
+        io.emit("updateMessages", message)
+    })
 })
 
 
