@@ -1,10 +1,9 @@
-const express = require("express");
+const server = require("./main");
+const dotenv= require('dotenv')
+dotenv.config({path:__dirname+'/config.env'});
 
-const server= express();
 
-const port = 3000
+const port = process.env.PORT || 2000
 server.listen(port, ()=> {
     console.log(`Server open on port ${port}`);
 });
-
-server.use(express.static("./public"));
