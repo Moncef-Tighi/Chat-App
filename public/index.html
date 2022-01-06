@@ -1,7 +1,10 @@
 <html>
     <head>
-        <script src='/socket.io/socket.io.js' defer></script>
-        <script src='javascript/chat.js' defer></script>
+        <script src='/socket.io/socket.io.js'></script>
+        <script type="module">
+            import dateFns from 'https://cdn.skypack.dev/date-fns';
+        </script>
+        <script  type="module" src='javascript/chat.js' defer></script>
         <link rel="stylesheet" href='css/style.css'>
     </head>
     <body>
