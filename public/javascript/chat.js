@@ -6,23 +6,23 @@ const formMessage = document.querySelector("#message-form");
 const formConnexion = document.querySelector("#connexion");
 const wrapper=document.querySelector("#wrapper");
 const connectedList= document.querySelector("aside").querySelector("ul");
+const deco= document.querySelector("#déconnexion");
 let username;
 
 const chat = document.querySelector("section");
 
 
-socket.on('updateMessages', (message)=> {
+socket.on('updateMessages', (message, sender)=> {
     const messageHTML = `
         <div class="message">
+            <h1>${sender}</h1> <span class="time-left">${format(new Date(), 'MMM eo k:mm')}</span>
             <p>${message}</p>
-            <span class="time-left">${format(new Date(), 'MMM eo k:mm')}</span>
         </div>
     `
     chat.insertAdjacentHTML("beforeend", messageHTML)
 })
 
 socket.on("updateList", (usersList)=> {
-    console.log(usersList);
     connectedList.innerHTML="";
     usersList.forEach(user => {
         connectedList.insertAdjacentHTML("beforeend", `<li>${user}</li>`)        
@@ -35,7 +35,7 @@ formMessage.addEventListener("submit", (event)=> {
     document.querySelector("#sender").value="";
     document.querySelector("#sender").focus();
     if (message){
-        socket.emit('sendMessage', message)
+        socket.emit('sendMessage', message, username)
     }
 
 })

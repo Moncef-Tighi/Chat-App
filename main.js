@@ -14,12 +14,16 @@ let connectedUsers=[];
 
 server.use(express.static("./public"));
 
+
+
+
 io.on("connection", (socket)=> {
     let currentUser;
+
     socket.emit("welcome", "The websocket connexion have been established");
 
-    socket.on("sendMessage", (message)=> {
-        io.emit("updateMessages", message)
+    socket.on("sendMessage", (message, sender)=> {
+        io.emit("updateMessages", message, sender)
     })
 
     socket.on("connexion", (user)=> {
@@ -37,7 +41,7 @@ io.on("connection", (socket)=> {
         //console.log("Déconnexion " + connectedUsers)
         io.emit("updateList", connectedUsers)
     })
-    
+
 })
 
 module.exports= app;
