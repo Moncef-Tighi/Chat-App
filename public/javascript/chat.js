@@ -15,7 +15,7 @@ const chat = document.querySelector("section");
 socket.on('updateMessages', (message, sender, mine)=> {
     const messageHTML = `
         <div class="${mine}message">
-            <h1>${sender}</h1> <span class="time-left">${format(new Date(), 'MMM eo k:mm')}</span>
+            <h1>${sender}</h1> <span class="time">${format(new Date(), 'MMM eo k:mm')}</span>
             <p>${message}</p>
         </div>
     `
