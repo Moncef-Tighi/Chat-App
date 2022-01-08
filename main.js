@@ -23,7 +23,8 @@ io.on("connection", (socket)=> {
     socket.emit("welcome", "The websocket connexion have been established");
 
     socket.on("sendMessage", (message, sender)=> {
-        io.emit("updateMessages", message, sender)
+        socket.broadcast.emit("updateMessages", message, sender,"")
+        socket.emit("updateMessages", message, sender,"my-")
     })
 
     socket.on("connexion", (user)=> {

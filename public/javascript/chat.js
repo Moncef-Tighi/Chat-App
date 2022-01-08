@@ -6,20 +6,21 @@ const formMessage = document.querySelector("#message-form");
 const formConnexion = document.querySelector("#connexion");
 const wrapper=document.querySelector("#wrapper");
 const connectedList= document.querySelector("aside").querySelector("ul");
-const deco= document.querySelector("#déconnexion");
+const section = document.querySelector("section");
 let username;
 
 const chat = document.querySelector("section");
 
 
-socket.on('updateMessages', (message, sender)=> {
+socket.on('updateMessages', (message, sender, mine)=> {
     const messageHTML = `
-        <div class="message">
+        <div class="${mine}message">
             <h1>${sender}</h1> <span class="time-left">${format(new Date(), 'MMM eo k:mm')}</span>
             <p>${message}</p>
         </div>
     `
-    chat.insertAdjacentHTML("beforeend", messageHTML)
+    chat.insertAdjacentHTML("beforeend", messageHTML);
+    window.scrollTo(0,section.scrollHeight);
 })
 
 socket.on("updateList", (usersList)=> {
