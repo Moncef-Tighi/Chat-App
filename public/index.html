@@ -7,37 +7,43 @@
         <script  type="module" src='javascript/chat.js' defer></script>
         <link rel="stylesheet" href='css/style.css'>
     </head>
+
     <body>
-        <header>
-            <ul>
-                <li>Chat</li>
-                <li>Name</li>
-                <li>Déconnexion</li>
-            </ul>
-        </header>
+
         <div id="wrapper">
             <form id="connexion">
                 <input type="text" id="username" placeholder="Votre nom">
                 <button type="submit"><img src="https://www.svgrepo.com/show/193493/send.svg"></i></button>
-            </form>
-     
+            </form>     
         </div>
-        <aside>
-            <ul></ul>
-        </aside>
-        <section>
-            <div class="message">
-                <p>Hello. How are you today?</p>
-                <span class="time-left">11:00</span>
-              </div>
 
-        </section>
+        <header>
+            <ul>
+                <li>Chat</li>
+                <li id="name"></li>
+                <li>Déconnexion</li>
+            </ul>
+        </header>
+
+        <div id="chatbox">
+            <aside>
+                <ul></ul>
+            </aside>
+            <section>
+                <div class="message">
+                    <p>Hello. How are you today?</p>
+                    <span class="time-left">11:00</span>
+                </div>
+
+            </section>
 
 
-          <form id="message-form">
-              <label for="sender">Envoyer un message : </label>
-              <input type="text" id="sender">
-              <button type="submit">Envoyer</button>
-          </form>
+            <form id="message-form">
+                <label for="sender">Envoyer un message : </label>
+                <input type="text" id="sender">
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+
     </body>
 </html>

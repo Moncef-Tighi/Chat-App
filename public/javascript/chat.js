@@ -31,9 +31,9 @@ socket.on("updateList", (usersList)=> {
 
 formMessage.addEventListener("submit", (event)=> {
     event.preventDefault()
-    const message = document.querySelector("input").value;
-    document.querySelector("input").value="";
-    document.querySelector("input").focus();
+    const message = document.querySelector("#sender").value;
+    document.querySelector("#sender").value="";
+    document.querySelector("#sender").focus();
     if (message){
         socket.emit('sendMessage', message)
     }
@@ -46,5 +46,6 @@ formConnexion.addEventListener("submit", (event)=> {
     if (username){
         wrapper.style.display="none";
         socket.emit('connexion', username)
+        document.querySelector("#name").innerHTML=username;
     }
 })
