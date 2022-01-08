@@ -1,12 +1,14 @@
 :root {
-    --main-color: rebeccapurple;
+    --main-color: #9a4ee6;
+    --main-color-light: #9a4ee652;
+    --main-color-lighter: #9a4ee626;
+    --secondary-color : #9ae64e;
 }
 
 body {
     margin: 0px;
     height: 100%;
     display: flex;
-    background-color: #1d1d1d;
 }
 
 header {
@@ -14,6 +16,8 @@ header {
   width: 100%;
   height: 7vh;
   background: var(--main-color);
+  color: white;
+  font-family: sans-serif;
 }
 
 header ul {
@@ -22,13 +26,19 @@ header ul {
   margin-right: 3vw;
 }
 
+header ul li {
+  font-size: 1.8em;
+}
+
 li {
   list-style-type: none;
-  font-size: 20px;
+  overflow-x: clip;
 }
 
 #chatbox {
   margin-top: 7vh;
+  width: 100%;
+  background-color: var(--main-color-lighter);
 }
 
 #message-form {
@@ -37,10 +47,12 @@ li {
     font-size: 20px;
     background-color: #c7c7c7;
     width: 100%;
-    height: 5%;
+    height: 7vh;
     margin: 0;
     padding-top: 5px;
     padding-left: 10px;
+    background: var(--main-color);
+
 }
 
 #message-form label {
@@ -60,12 +72,17 @@ li {
 aside {
     width: 15vw;
     height: 100%;
-    background-color: grey;
+    background-color:var(--main-color-light);
     position: fixed;
 }
 
+aside ul {
+  padding: 0;
+  text-align: center;
+  font-size: 1em;
+}
+
 section {
-    width: 100%;
     margin-left: 20vw;
     margin-right: 6.5vw;
 }
@@ -76,6 +93,7 @@ section {
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+    width: 75vw;
   }
   
   /* Darker chat message */
@@ -154,7 +172,7 @@ section {
 #connexion button {
   padding: 14px 11px 14px 14px;
   cursor: pointer;
-  background: #8cf78b;
+  background: var(--secondary-color);
   border: none;
   clip-path: circle();
   position: absolute;
