@@ -55,7 +55,7 @@ section {
     height: 7vh;
     margin: 0;
     padding-top: 5px;
-    padding-left: 10px;
+    padding-left: 17vw;
     background: var(--main-color);
 }
 
@@ -66,6 +66,8 @@ section {
 #message-form input {
     height: 80%;
     width: 60vw;
+    border-radius: 15px;
+    background: #ffffff87;
 }
 
 #message-form button {
@@ -93,13 +95,13 @@ aside ul {
   border-radius: 25px;
   margin: 9px 0;
   width: 75vw;
-  padding: 10px 20px;
+  padding: 2px 9px;
   margin-left: 19vw;
   }
 
 .my-message{
   text-align: end;  
-  background-color: #d5b4f4;
+  background-color: #e6ccfe;
 }  
 .message p {
   font-size: 16px;
